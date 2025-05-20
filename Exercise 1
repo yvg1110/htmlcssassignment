@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA SHOOPA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .cart img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .products {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin: 40px 0 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;  /* prevent wrapping */
+      margin-bottom: 40px;
+    }
+
+
+    .product-card {
+      width: 220px;
+      border: 1px solid #eee;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .product-card span {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .brands {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    .brands img {
+      width: 100px;
+      height: auto;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="brand">LA SHOOPA</div>
+    <nav class="nav-links">
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Support</a>
+    </nav>
+    <div class="cart">
+      <img src="icon-cart.jpg" alt="Cart">
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="header-img.jpg" alt="Header Banner" />
+  </section>
+
+  <section class="products">
+    <h2>LATEST PRODUCTS</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>SUNT OFFICIA SED DESERUNT.</p>
+        <span>$150.00</span>
+      </div>
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>DUIS AUTE IRURE DOLOR.</p>
+        <span>$650.00</span>
+      </div>
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>CONSECTETUR EIUSMOD ELIT.</p>
+        <span>$100.00</span>
+      </div>
+    </div>
+
+    <h2>POPULAR PRODUCTS</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>DOLORE EU NULLA PARIATUR.</p>
+        <span>$120.00</span>
+      </div>
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>ENIM AD MINIM VENIAM.</p>
+        <span>$1000.00</span>
+      </div>
+      <div class="product-card">
+        <img src="product-img.jpg" alt="Product" />
+        <p>EXCEPTEUR SINT CUPIDATAT.</p>
+        <span>$340.00</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="brands">
+    <img src="brand-img.jpg" alt="Brand">
+    <img src="brand-img.jpg" alt="Brand">
+    <img src="brand-img.jpg" alt="Brand">
+    <img src="brand-img.jpg" alt="Brand">
+    <img src="brand-img.jpg" alt="Brand">
+  </footer>
+
+</body>
+</html>
