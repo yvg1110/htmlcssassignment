@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vinsol Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+    }
+    .top-bar {
+      border-bottom: 2px solid #db2927;
+      padding: 10px 20px;
+      font-size: 13px;
+      color: black;
+    }
+    .top-bar a {
+      color: #045198;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .form-heading {
+      font-size: 18px;
+      color: #2a286d;
+      margin: 20px 30px 10px;
+    }
+    .form-container {
+      background-color: #ececec;
+      border: 1px solid #bbbbcb;
+      width: 520px;
+      margin: 10px 30px 30px;
+      padding: 20px 30px;
+    }
+    ul.form-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .form-list li {
+      margin-bottom: 20px;
+    }
+    label {
+      display: inline-block;
+      width: 120px;
+      font-size: 14px;
+      color: black;
+      vertical-align: top;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 360px;
+      height: 25px;
+      background-color: white;
+      border: 1px solid #b9b9b9;
+      font-size: 13px;
+      color: #666666;
+    }
+    textarea {
+      width: 360px;
+      height: 135px;
+      background-color: white;
+      border: 1px solid #b9b9b9;
+      font-size: 13px;
+      color: #666666;
+    }
+    select {
+      width: 110px;
+      font-size: 13px;
+      color: #6f6f6f;
+      font-family: Tahoma, sans-serif;
+      margin-right: 5px;
+    }
+    .gender-options input {
+      margin-left: 10px;
+    }
+    .submit-btn {
+      background-color: #db2927;
+      border: 1px solid #a10200;
+      width: 130px;
+      height: 32px;
+      color: white;
+      font-size: 14px;
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <img src="vinsollogo.png" alt="Vinsol Logo" height="40">
+    <span>Email us at: <a href="mailto:sales@vinsol.com">sales@vinsol.com</a></span>
+    <span>Skype: <a href="#">Vinsol</a></span>
+  </div>
+
+  <h2 class="form-heading">Please fill the form below</h2>
+
+  <div class="form-container">
+    <form>
+      <ul class="form-list">
+        <li>
+          <label for="first">First Name</label>
+          <input type="text" id="first" name="first">
+        </li>
+        <li>
+          <label for="last">Last Name</label>
+          <input type="text" id="last" name="last">
+        </li>
+        <li>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email">
+        </li>
+        <li>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+        </li>
+        <li class="gender-options">
+          <label>Gender</label>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </li>
+        <li>
+          <label>Date of Birth</label>
+          <select name="day" id="day">
+            <option>DD</option>
+            ${Array.from({length: 31}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+          </select>
+          <select name="month" id="month">
+            <option>MM</option>
+            <option value="1">Jan</option>
+            <option value="2">Feb</option>
+            <option value="3">Mar</option>
+            <option value="4">Apr</option>
+            <option value="5">May</option>
+            <option value="6">Jun</option>
+            <option value="7">Jul</option>
+            <option value="8">Aug</option>
+            <option value="9">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+          </select>
+          <select name="year" id="year">
+            <option>YY</option>
+            ${Array.from({length: 61}, (_, i) => {
+              const y = 1950 + i;
+              return `<option value="${y}">${y}</option>`;
+            }).join('')}
+          </select>
+        </li>
+        <li>
+          <label for="address">Address</label>
+          <textarea id="address" name="address"></textarea>
+        </li>
+        <li>
+          <button type="submit" class="submit-btn">Submit Details</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+</body>
+</html>
