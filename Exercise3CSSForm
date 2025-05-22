@@ -1,40 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Vinsol Form</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Tahoma, sans-serif;
-    }
+    body { margin: 0; font-family: 'Tahoma', sans-serif; }
     .top-bar {
       border-bottom: 2px solid #db2927;
       padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .contact-info span {
       font-size: 13px;
       color: black;
+      margin-left: 15px;
     }
-    .top-bar a {
+    .contact-info a {
       color: #045198;
       text-decoration: none;
-      margin-left: 15px;
     }
     .form-heading {
       font-size: 18px;
       color: #2a286d;
-      margin: 20px 30px 10px;
+      margin-left: 30px;
+      margin-top: 20px;
     }
     .form-container {
       background-color: #ececec;
       border: 1px solid #bbbbcb;
       width: 520px;
-      margin: 10px 30px 30px;
+      margin: 20px 30px;
       padding: 20px 30px;
     }
-    ul.form-list {
+    .form-list {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
     .form-list li {
       margin-bottom: 20px;
@@ -44,44 +48,40 @@
       width: 120px;
       font-size: 14px;
       color: black;
-      vertical-align: top;
     }
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 360px;
-      height: 25px;
+    input[type="text"], input[type="email"], input[type="password"] {
       background-color: white;
       border: 1px solid #b9b9b9;
+      width: 360px;
+      height: 25px;
       font-size: 13px;
       color: #666666;
     }
     textarea {
-      width: 360px;
-      height: 135px;
       background-color: white;
       border: 1px solid #b9b9b9;
+      width: 360px;
+      height: 135px;
       font-size: 13px;
       color: #666666;
     }
     select {
       width: 110px;
       font-size: 13px;
+      font-family: 'Tahoma', sans-serif;
       color: #6f6f6f;
-      font-family: Tahoma, sans-serif;
-      margin-right: 5px;
     }
-    .gender-options input {
+    .gender-row input[type="radio"] {
       margin-left: 10px;
     }
-    .submit-btn {
+    button {
       background-color: #db2927;
       border: 1px solid #a10200;
-      width: 130px;
-      height: 32px;
       color: white;
       font-size: 14px;
-      font-family: Tahoma, sans-serif;
+      font-family: 'Tahoma', sans-serif;
+      width: 130px;
+      height: 32px;
       text-align: center;
       cursor: pointer;
     }
@@ -91,8 +91,10 @@
 
   <div class="top-bar">
     <img src="vinsollogo.png" alt="Vinsol Logo" height="40">
-    <span>Email us at: <a href="mailto:sales@vinsol.com">sales@vinsol.com</a></span>
-    <span>Skype: <a href="#">Vinsol</a></span>
+    <div class="contact-info">
+      <span>Email us at: <a href="mailto:sales@vinsol.com">sales@vinsol.com</a></span>
+      <span>Skype: <a href="#">Vinsol</a></span>
+    </div>
   </div>
 
   <h2 class="form-heading">Please fill the form below</h2>
@@ -116,48 +118,25 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password">
         </li>
-        <li class="gender-options">
+        <li class="gender-row">
           <label>Gender</label>
           <input type="radio" id="male" name="gender" value="male">
           <label for="male">Male</label>
           <input type="radio" id="female" name="gender" value="female">
           <label for="female">Female</label>
         </li>
-        <li>
+        <li class="dob-row">
           <label>Date of Birth</label>
-          <select name="day" id="day">
-            <option>DD</option>
-            ${Array.from({length: 31}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
-          </select>
-          <select name="month" id="month">
-            <option>MM</option>
-            <option value="1">Jan</option>
-            <option value="2">Feb</option>
-            <option value="3">Mar</option>
-            <option value="4">Apr</option>
-            <option value="5">May</option>
-            <option value="6">Jun</option>
-            <option value="7">Jul</option>
-            <option value="8">Aug</option>
-            <option value="9">Sep</option>
-            <option value="10">Oct</option>
-            <option value="11">Nov</option>
-            <option value="12">Dec</option>
-          </select>
-          <select name="year" id="year">
-            <option>YY</option>
-            ${Array.from({length: 61}, (_, i) => {
-              const y = 1950 + i;
-              return `<option value="${y}">${y}</option>`;
-            }).join('')}
-          </select>
+          <select><option>DD</option></select>
+          <select><option>MM</option></select>
+          <select><option>YY</option></select>
         </li>
         <li>
           <label for="address">Address</label>
           <textarea id="address" name="address"></textarea>
         </li>
         <li>
-          <button type="submit" class="submit-btn">Submit Details</button>
+          <button type="submit">Submit Details</button>
         </li>
       </ul>
     </form>
