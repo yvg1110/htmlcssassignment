@@ -32,9 +32,10 @@
       background-color: #ececec;
       border: 1px solid #bbbbcb;
       width: 520px;
-      margin: 20px 30px;
+      margin: 20px auto;
       padding: 20px 30px;
     }
+
     .form-list {
       list-style: none;
       padding: 0;
